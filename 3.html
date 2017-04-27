@@ -1,0 +1,64 @@
+<DOCTYPE html>
+  <html>
+  <head>
+         <meta charset="utf-8">
+
+          <title> Fruit Select </title>
+          <style type="text/css/" media="screen">
+                #box1, #box2{
+                   border: 1px solid black;
+                   width: 20px;
+                   padding: 20px;
+                   height: 400px;
+                   margin: 50px;
+                   float: left;
+              }
+
+          </style>
+
+
+   </head>
+         <body>
+               <div id="box1">
+                    <input type="checkbox">Apple <br/>
+                    <input type="checkbox">Mango<br/>
+                    <input type="checkbox">Grapes<br/>
+                    <input type="checkbox">Cherry<br/>
+                </div>
+                </div>
+
+
+         <script type="text/javascript">
+                  var input = document.getElementById("box1");
+                  input.addEventListener("click",doSomething);
+
+                  function doSomething(event) {
+                    var fruitName = event.target.nextSibling.data;
+                    var newlist = document.createElement("li");
+                    var completeListEle = document.createTextNode(fruitName);
+
+                  if (event.target.checked){
+                        newlist.appendChild(completeListEle);
+                        document.getElementById("box2").appendChild(newlist);
+                  } else {
+                         var box2 = document.getElementById("box2");
+                         var fruitList = box2.childNodes;
+                         for(var i=0; i < fruitList.length;  i++) {
+                                //console.log(fruitName);
+                         console.log(fruitList[i].innerHTML);
+                         if(fruitList[i].innerHTML === fruitName){
+                                box2.removeChild(fruitList[i]);
+          }
+
+
+
+
+
+
+
+
+
+         </script>
+
+         </body>
+         </html>
